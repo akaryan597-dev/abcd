@@ -1,16 +1,13 @@
 {
-  "name": "yadukul-dairy-fullstack",
+  "name": "yadukul-dairy-backend",
   "version": "1.0.0",
-  "description": "Full-stack dairy management platform",
-  "type": "module",
-  "main": "backend/server.js",
+  "description": "Backend for Yadukul Dairy",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.ts",
-    "client": "npm --prefix frontend run dev",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d"
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "data:import": "node dist/seeder.js",
+    "data:destroy": "node dist/seeder.js -d"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -23,9 +20,7 @@
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.3",
     "multer": "^1.4.5-lts.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "recharts": "^2.6.2"
+    "multer-storage-cloudinary": "^4.0.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -34,9 +29,6 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/multer": "^1.4.7",
     "@types/node": "^20.5.1",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "concurrently": "^8.2.0",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
